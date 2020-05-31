@@ -1,0 +1,46 @@
+  <div class=main-div>
+    <mat-card style="width: 30em; height: 80vh; box-shadow: 1px 1px 7px 0px;">
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm.value)">
+        
+        <div fxLayout="row" fxLayoutAlign="center" style="font-size:24px; margin-bottom: 80px;">
+          <span style="color: rgb(255, 174, 0);">F</span>
+          <span style="color: rgba(0, 0, 0, 0.342);">undoo</span>
+          <span style="color: rgb(255, 174, 0);">N</span>
+          <span style="color: rgba(0, 0, 0, 0.342);">otes</span>
+        </div>
+        <div align="center"><label style="font-size:25px;"><b>Sign In </b></label></div><br>
+
+        <div class="form-group" class="example-container">
+          <mat-form-field>
+            <input matInput placeholder="Enter your email" type="email"
+              formControlName="username" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+            <mat-error *ngIf="submitted && f.username.errors" class="invalid-feedback">
+              <mat-error *ngIf="f.username.errors.required">*emailId is <strong>required</strong></mat-error>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="form-group" class="example-container">
+          <mat-form-field>
+            <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'"
+              formControlName="password"  class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+            <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            <mat-error *ngIf="submitted && f.password.errors" class="invalid-feedback">
+              <mat-error *ngIf="f.password.errors.required">*password is <strong>required</strong></mat-error>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="form-group">
+          <mat-card-actions>
+            <button color="btn-primary" [disabled]="loading" class="btn btn-primary"><b>Sign In</b></button>
+            <div align="center"><a class="btn btn-link" routerLink="/forgotpassword">Forgot password?</a></div>
+            <br>
+            <div>Create an account?
+              <a routerLink="/register" class="btn btn-link">Sign Up</a>
+            </div>
+          </mat-card-actions>
+        </div>
+      </form>
+    </mat-card>
+  </div>
