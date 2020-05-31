@@ -8,7 +8,7 @@ export const environment = {
   registerUrl: 'user/register/',
   loginUrl: 'user/login/',
   forgotpasswordUrl: 'user/forgotpassword/',
-  resetPaswordUrl: 'user/resetpassword/',
+  resetPaswordUrl: 'user/resetpassword/{token}/',
   usersVerifyUrl: 'user/verify',
   getUsersUrl: 'user/getusers'
 };
