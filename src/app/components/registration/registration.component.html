@@ -12,29 +12,29 @@
           <div align="center"><label style="font-size:25px;"><b>Sign Up</b></label></div>
           <div class="form-group" class="example-container">
               <mat-form-field>
-                  <input matInput placeholder="Enter your First Name" formControlName="firstname" class="form-control"
-                      [ngClass]="{ 'is-invalid': submitted && f.firstname.errors }" />
-                  <mat-error *ngIf="submitted && f.firstname.errors" class="invalid-feedback">
-                      <mat-error *ngIf="f.firstname.errors.required">first Name is required</mat-error>
-                      <mat-error *ngIf="f.firstname.errors.pattern">please give alphabets only with min 3 alphabet
+                  <input matInput placeholder="Enter your First Name" formControlName="firstName" class="form-control"
+                      [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                  <mat-error *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                      <mat-error *ngIf="f.firstName.errors.required">first Name is required</mat-error>
+                      <mat-error *ngIf="f.firstName.errors.pattern">please give alphabets only with min 3 alphabet
                       </mat-error>
                   </mat-error>
               </mat-form-field>
           </div>
           <div class="form-group" class="example-container">
               <mat-form-field>
-                  <input matInput placeholder="Enter your Last Name" formControlName="lastname" class="form-control"
-                      [ngClass]="{ 'is-invalid': submitted && f.lastname.errors }" />
-                  <mat-error *ngIf="submitted && f.lastname.errors" class="invalid-feedback">
-                      <mat-error *ngIf="f.lastname.errors.required">last Name is required</mat-error>
-                      <mat-error *ngIf="f.lastname.errors.pattern">please give alphabets only with min 3 alphabet
+                  <input matInput placeholder="Enter your Last Name" formControlName="lastName" class="form-control"
+                      [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                  <mat-error *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                      <mat-error *ngIf="f.lastName.errors.required">last Name is required</mat-error>
+                      <mat-error *ngIf="f.lastName.errors.pattern">please give alphabets only with min 3 alphabet
                       </mat-error>
                   </mat-error>
               </mat-form-field>
           </div>
           <div class="form-group" class="example-container">
               <mat-form-field>
-                  <input matInput placeholder="Enter your emailID" formControlName="email" class="form-control"
+                  <input matInput placeholder="Enter your Email ID" formControlName="email" class="form-control"
                       [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
                   <mat-error *ngIf="submitted && f.email.errors" class="invalid-feedback">
                       <mat-error *ngIf="f.email.errors.required">emailId is required</mat-error>
@@ -45,17 +45,17 @@
           </div>
           <div class="form-group" class="example-container">
               <mat-form-field>
-                  <input matInput placeholder="Enter your mobile Number" formControlName="mobileNumber"
-                      class="form-control" [ngClass]="{ 'is-invalid': submitted && f.mobileNumber.errors }" />
-                  <mat-error *ngIf="submitted && f.mobileNumber.errors" class="invalid-feedback">
-                      <mat-error *ngIf="f.mobileNumber.errors.required">mobile Number is required</mat-error>
-                      <mat-error *ngIf="f.mobileNumber.errors.pattern">10 digit phone number</mat-error>
+                  <input matInput placeholder="Enter your Mobile Number" formControlName="mobile"
+                      class="form-control" [ngClass]="{ 'is-invalid': submitted && f.mobile.errors }" />
+                  <mat-error *ngIf="submitted && f.mobile.errors" class="invalid-feedback">
+                      <mat-error *ngIf="f.mobile.errors.required">mobile Number is required</mat-error>
+                      <mat-error *ngIf="f.mobile.errors.pattern">10 digit phone number</mat-error>
                   </mat-error>
               </mat-form-field>
           </div>
           <div class="form-group" class="example-container">
               <mat-form-field>
-                  <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'"
+                  <input matInput placeholder="Enter your Password" [type]="hide ? 'password' : 'text'"
                       formControlName="password" class="form-control"
                       [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
                   <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>

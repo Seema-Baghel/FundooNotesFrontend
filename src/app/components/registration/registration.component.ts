@@ -20,10 +20,10 @@ export class RegistrationComponent implements OnInit {
 
   public ngOnInit() {
     this.registerForm = this.formBuilder.group({
-      firstname: ['', [Validators.required, Validators.pattern("^[a-zA-Z]{3,15}$")]],
-      lastname: ['', [Validators.required, Validators.pattern("^[a-zA-Z]{3,15}$")]],
+      firstName: ['', [Validators.required, Validators.pattern("^[a-zA-Z]{3,15}$")]],
+      lastName: ['', [Validators.required, Validators.pattern("^[a-zA-Z]{3,15}$")]],
       email: ['', [Validators.required, Validators.pattern("^[a-z0-9._%-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
-      mobileNumber: ['', [Validators.required, Validators.pattern("^[0-9]{10}$")]],
+      mobile: ['', [Validators.required, Validators.pattern("^[0-9]{10}$")]],
       password: ['', [Validators.required, Validators.minLength(4)]]
     });
   }
@@ -38,6 +38,7 @@ export class RegistrationComponent implements OnInit {
     console.log(user);
     this.userService.registration(user).subscribe(response => {
       console.log("registartion successful");
+      this.snackBar.open("Registration Successfully", "Ok", { duration: 2000 })
       this.router.navigate(['/login']);
     }, error => {
       this.snackBar.open("error", "cannot register", { duration: 2000 })
