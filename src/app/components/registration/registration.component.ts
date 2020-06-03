@@ -20,11 +20,11 @@ export class RegistrationComponent implements OnInit {
 
   public ngOnInit() {
     this.registerForm = this.formBuilder.group({
-      firstName: ['', [Validators.required, Validators.pattern("^[a-zA-Z]{3,15}$")]],
-      lastName: ['', [Validators.required, Validators.pattern("^[a-zA-Z]{3,15}$")]],
-      email: ['', [Validators.required, Validators.pattern("^[a-z0-9._%-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
+      firstName: ['', [Validators.required, Validators.pattern("^[A-Z][a-z\\s]{3,}")]],
+      lastName: ['', [Validators.required, Validators.pattern("^[A-Z][a-z\\s]{3,}")]],
+      email: ['', [Validators.required, Validators.pattern("[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}$")]],
       mobile: ['', [Validators.required, Validators.pattern("^[0-9]{10}$")]],
-      password: ['', [Validators.required, Validators.minLength(4)]]
+      password: ['', [Validators.required, Validators.pattern("(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{8,}")]]
     });
   }
   get f() { return this.registerForm.controls; }

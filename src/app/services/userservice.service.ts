@@ -33,7 +33,7 @@ export class UserserviceService {
   }
 
   resetPassword(user: any): Observable<any> {
-    return this.http.post<any>(`${environment.apiUrl}${environment.resetPaswordUrl}`, user);
+    return this.http.put<any>(`${environment.apiUrl}${environment.resetPaswordUrl}`, user);
   }
 }
 

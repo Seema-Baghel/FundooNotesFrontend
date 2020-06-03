@@ -5,6 +5,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import {MatRippleModule} from '@angular/material/core';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -17,7 +20,7 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { LoginComponent } from './components/login/login.component';
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
 import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassword.component';
-
+// import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,8 @@ import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassw
     RegistrationComponent,
     LoginComponent,
     ResetpasswordComponent,
-    ForgotpasswordComponent
+    ForgotpasswordComponent,
+    // DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -37,6 +41,9 @@ import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassw
     MatSnackBarModule,
     MatFormFieldModule,
     MatInputModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatMenuModule,
     MatRippleModule,
     MatCardModule,
     RouterModule

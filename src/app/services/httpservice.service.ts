@@ -17,17 +17,14 @@ export class HttpserviceService {
 
   httpOptions = new HttpHeaders().set('token', this.token)
 
-
-
   constructor(private http: HttpClient) { }
+
   public postUser(options) {
 
     //console.log("httpService",options.url);
 
     console.log("this.baseurl", this.baseUrl);
     console.log("options.data", options.data);
-
-
 
     return this.http.post(this.baseUrl + options.url, options.data);
   }
@@ -47,10 +44,11 @@ export class HttpserviceService {
     console.log("baseUrl==", url)
     return this.http.get(this.baseUrl + options.url, { headers: this.httpOptions });
   }
+
   public delete(options) {
     return this.http.delete(this.baseUrl + options.url, { headers: this.httpOptions });
-
   }
+
   public put(options) {
     console.log("this.httpOptions", this.httpOptions)
     return this.http.put(this.baseUrl + options.url, { headers: this.httpOptions });
@@ -58,7 +56,6 @@ export class HttpserviceService {
   }
 
   postWithHeader(url, data) {
-    // console.log('data in http service--',data);
     console.log("token in httpService--", this.token);
     return this.http.post(this.baseUrl + url, data, { headers: this.httpOptions });
   }

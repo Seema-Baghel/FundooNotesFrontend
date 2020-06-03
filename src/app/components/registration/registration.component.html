@@ -1,23 +1,21 @@
-<!-- <div fxLayout="row" fxLayoutAlign="center stretch">
-  <mat-card fxFlex="40%;" fxFlex.xs="90%" fxFlex.sm="40%" fxFlex.md="30%"> -->
 <div class=main-div>
-  <mat-card style="width: 40em; height: 90vh; box-shadow: 1px 1px 7px 0px;">
+  <mat-card style="width: 30em; height: 90vh; box-shadow: 1px 1px 7px 0px;">
     <form [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm.value)">
-        <div fxLayout="row" fxLayoutAlign="center" style="font-size:24px; margin-bottom: 80px;">
+        <div fxLayout="row" fxLayoutAlign="center" style="font-size:24px; margin-bottom: 60px;">
             <span style="color: rgb(255, 174, 0);">F</span>
             <span style="color: rgba(0, 0, 0, 0.342);">undoo</span>
             <span style="color: rgb(255, 174, 0);">N</span>
             <span style="color: rgba(0, 0, 0, 0.342);">otes</span>
           </div>
-          <div align="center"><label style="font-size:25px;"><b>Sign Up</b></label></div>
+          <div align="center"><label style="font-size:25px;"><b>Sign Up</b></label></div><br>
           <div class="form-group" class="example-container">
               <mat-form-field>
                   <input matInput placeholder="Enter your First Name" formControlName="firstName" class="form-control"
                       [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                      <mat-icon matSuffix>perm_identity</mat-icon>
                   <mat-error *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
                       <mat-error *ngIf="f.firstName.errors.required">first Name is required</mat-error>
-                      <mat-error *ngIf="f.firstName.errors.pattern">please give alphabets only with min 3 alphabet
-                      </mat-error>
+                      <mat-error *ngIf="f.firstName.errors.pattern">please give alphabets only with min 3 alphabet</mat-error>
                   </mat-error>
               </mat-form-field>
           </div>
@@ -25,6 +23,7 @@
               <mat-form-field>
                   <input matInput placeholder="Enter your Last Name" formControlName="lastName" class="form-control"
                       [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                      <mat-icon matSuffix>perm_identity</mat-icon>
                   <mat-error *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
                       <mat-error *ngIf="f.lastName.errors.required">last Name is required</mat-error>
                       <mat-error *ngIf="f.lastName.errors.pattern">please give alphabets only with min 3 alphabet
@@ -36,6 +35,7 @@
               <mat-form-field>
                   <input matInput placeholder="Enter your Email ID" formControlName="email" class="form-control"
                       [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                      <mat-icon matSuffix>email</mat-icon>
                   <mat-error *ngIf="submitted && f.email.errors" class="invalid-feedback">
                       <mat-error *ngIf="f.email.errors.required">emailId is required</mat-error>
                       <mat-error *ngIf="f.email.errors.pattern">please give the example like this Eg:abc@gmail.com
@@ -47,6 +47,7 @@
               <mat-form-field>
                   <input matInput placeholder="Enter your Mobile Number" formControlName="mobile"
                       class="form-control" [ngClass]="{ 'is-invalid': submitted && f.mobile.errors }" />
+                      <mat-icon matSuffix>call</mat-icon>
                   <mat-error *ngIf="submitted && f.mobile.errors" class="invalid-feedback">
                       <mat-error *ngIf="f.mobile.errors.required">mobile Number is required</mat-error>
                       <mat-error *ngIf="f.mobile.errors.pattern">10 digit phone number</mat-error>
@@ -61,7 +62,7 @@
                   <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                   <mat-error *ngIf="submitted && f.password.errors" class="invalid-feedback">
                       <mat-error *ngIf="f.password.errors.required">Password is required</mat-error>
-                      <mat-error *ngIf="f.password.errors.minlength">Password must be at least 4 characters
+                      <mat-error *ngIf="f.password.errors.minlength">Password must be minimum 8 characters that contains atleast one Uppercase letter, lowercase letter, specical characters and number
                       </mat-error>
                   </mat-error>
               </mat-form-field>
