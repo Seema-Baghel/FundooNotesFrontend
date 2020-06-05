@@ -9,7 +9,7 @@ export const environment = {
   loginUrl: 'user/login/',
   forgotpasswordUrl: 'user/forgotpassword/',
   resetPaswordUrl: 'user/resetpassword/{token}/',
-  usersVerifyUrl: 'user/verify',
+  usersVerifyUrl: 'user/verify/',
   getUsersUrl: 'user/getusers'
 };
 

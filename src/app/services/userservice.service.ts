@@ -35,5 +35,9 @@ export class UserserviceService {
   resetPassword(user: any): Observable<any> {
     return this.http.put<any>(`${environment.apiUrl}${environment.resetPaswordUrl}`, user);
   }
+
+  // verifyEmail(token: string): Observable<any> {
+  //   return this.http.get<any>(`${environment.apiUrl}${environment.usersVerifyUrl}`, { headers: new HttpHeaders().set('token', localStorage.token) })
+  // }
 }
 

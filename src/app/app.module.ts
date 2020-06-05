@@ -20,7 +20,7 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { LoginComponent } from './components/login/login.component';
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
 import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassword.component';
-// import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,7 @@ import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassw
     LoginComponent,
     ResetpasswordComponent,
     ForgotpasswordComponent,
-    // DashboardComponent
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
