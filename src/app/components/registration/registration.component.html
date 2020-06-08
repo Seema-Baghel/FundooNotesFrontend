@@ -10,7 +10,7 @@
           <div align="center"><label style="font-size:25px;"><b>Sign Up</b></label></div><br>
           <div class="form-group" class="example-container">
               <mat-form-field>
-                  <input matInput placeholder="Enter your First Name" formControlName="firstName" class="form-control"
+                  <input matInput placeholder="First Name*" formControlName="firstName" class="form-control"
                       [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
                       <mat-icon matSuffix>perm_identity</mat-icon>
                   <mat-error *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
@@ -21,7 +21,7 @@
           </div>
           <div class="form-group" class="example-container">
               <mat-form-field>
-                  <input matInput placeholder="Enter your Last Name" formControlName="lastName" class="form-control"
+                  <input matInput placeholder="Last Name*" formControlName="lastName" class="form-control"
                       [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
                       <mat-icon matSuffix>perm_identity</mat-icon>
                   <mat-error *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
@@ -33,7 +33,7 @@
           </div>
           <div class="form-group" class="example-container">
               <mat-form-field>
-                  <input matInput placeholder="Enter your Email ID" formControlName="email" class="form-control"
+                  <input matInput placeholder="Email ID*" formControlName="email" class="form-control"
                       [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
                       <mat-icon matSuffix>email</mat-icon>
                   <mat-error *ngIf="submitted && f.email.errors" class="invalid-feedback">
@@ -45,7 +45,7 @@
           </div>
           <div class="form-group" class="example-container">
               <mat-form-field>
-                  <input matInput placeholder="Enter your Mobile Number" formControlName="mobile"
+                  <input matInput placeholder="Mobile Number*" formControlName="mobile"
                       class="form-control" [ngClass]="{ 'is-invalid': submitted && f.mobile.errors }" />
                       <mat-icon matSuffix>call</mat-icon>
                   <mat-error *ngIf="submitted && f.mobile.errors" class="invalid-feedback">
@@ -56,7 +56,7 @@
           </div>
           <div class="form-group" class="example-container">
               <mat-form-field>
-                  <input matInput placeholder="Enter your Password" [type]="hide ? 'password' : 'text'"
+                  <input matInput placeholder="Password*" [type]="hide ? 'password' : 'text'"
                       formControlName="password" class="form-control"
                       [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
                   <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>

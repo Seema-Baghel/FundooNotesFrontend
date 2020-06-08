@@ -12,10 +12,12 @@
     margin-left: 0px;
 }
 
+
 .refresh {
     display: flex;
-    justify-content: space-around;
-    width: 96px;
+    justify-content: space-between;
+    width: 20px;
+    margin-left: 1em;
 }
 
 .appBarLastIcon {
@@ -27,9 +29,10 @@
 
 .searchWhole {
     display: flex;
-    justify-content: space-between;
-    width: 70em;
-    margin-left: 8em;
+    justify-content: space-evenly;
+    width: 50em;
+    margin-left: 1em;
+    align-items: center;
 }
 
 .searchbar {
@@ -39,7 +42,7 @@
     background-color: #fff;
     border-color: transparentize($color:rgba(0, 0, 0, 0.342), $amount: 0);
     border-radius: 6px;
-    height: 44px;
+    height: 40px;
     width: 35em;
 }
 
@@ -67,10 +70,63 @@
     justify-content: center;
 }
 
+// .notesdiv {
+//     padding: 2px;
+//     border-bottom: 1px solid;
+//     border-left: 0px;
+// }
 
-.notesdiv {
-    padding: 2px;
-    border-bottom: 1px solid;
-    border-left: 0px;
+// .image{ 
+//     height: 71px;
+//     width: 71px;
+//     border-radius: 50%;
+//     //flex-shrink: 0;
+//     }
+.text_color{
+    display: block;
+    text-align: center;
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+.text_email{
+    text-align: center;
+    margin-bottom: 8px;
+}
 
+.avatar {
+    vertical-align: middle;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+}
+
+.avatar1 {
+    vertical-align: middle;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.profile {
+    box-shadow: 0 1px 3px 0 rgba(60, 64, 67, 0.302);
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.button {
+    background-color: rgb(247, 184, 49);
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+}
+
+.circle {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    margin-bottom: 5px;
+    border-style: groove;
+    border-width: 1px;
+    border-color: #e0e0e0;
 }

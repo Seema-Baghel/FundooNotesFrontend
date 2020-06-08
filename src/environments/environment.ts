@@ -10,6 +10,8 @@ export const environment = {
   forgotpasswordUrl: 'user/forgotpassword/',
   resetPaswordUrl: 'user/resetpassword/{token}/',
   usersVerifyUrl: 'user/verify/',
+  userProfilePicUploadUrl: 'user/uploadFile',
+  userProfilePicUrl: 'user/getProfilePic',
   getUsersUrl: 'user/getusers'
 };
 

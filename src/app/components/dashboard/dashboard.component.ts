@@ -2,6 +2,14 @@
  import { Subscription } from 'rxjs';
  import { Router, ActivatedRoute, NavigationStart, NavigationEnd } from '@angular/router';
  import { MatSnackBar } from '@angular/material/snack-bar';
+ import { BehaviorSubject } from 'rxjs';
+ 
+ import { MatDialog } from '@angular/material/dialog';
+ import { MatDialogRef } from "@angular/material/dialog";
+ import { UserserviceService } from 'src/app/services/userservice.service';
+ import { DataserviceService } from 'src/app/services/dataservice.service';
+ //import { ProfilepictureComponent } from 'src/app/components/profilepicture/profilepicture.component';
+ 
 
  @Component({
    selector: 'app-dashboard',
@@ -10,12 +18,22 @@
  })
  export class DashboardComponent implements OnInit {
 
+  email: string;
+  token: string;
+  firstName: string;
+  lastName: string;
+  message: any;
+  fileUrl: File;
+  profile: string;
   private sub: any;
   private param: any;
   subscription: Subscription;
   mySubscription: Subscription;
-
-   constructor(private router: Router, private route: ActivatedRoute, private matSnackBar: MatSnackBar) { 
+  private obtainNotes = new BehaviorSubject([]);
+  currentMessage = this.obtainNotes.asObservable();
+  
+  constructor(private router: Router, private route: ActivatedRoute, private matSnackBar: MatSnackBar,
+              private matDialog: MatDialog, private dataService: DataserviceService, private userService: UserserviceService) { 
     this.router.routeReuseStrategy.shouldReuseRoute = function () {
       return false;
     };
@@ -28,11 +46,40 @@
     });
    }
 
-   ngOnInit(): void {
+   ngOnInit() {
+    this.dataService.recentMessage.subscribe(
+      (response: any) => {
+        this.message = response;
+      }
+    );
+    this.token = localStorage.getItem('token')    
+    this.email = localStorage.getItem('emailId')
+    this.firstName = localStorage.getItem('firstname');
+    this.lastName = localStorage.getItem('lastname');
+    this.profile = localStorage.getItem('fileUrl');
    }
 
    refresh(): void {
     window.location.reload();
+  }
+
+  // displayProfile() {
+    // this.userService.getprofile(localStorage.getItem('token')).subscribe(details => {
+    //   this.profile = details
+    
+  //}
+
+  onSubmit(file: File) {
+    console.log(file);
+    
+    this.userService.uploadProfilePic(file).subscribe(response => {
+      console.log("login true");
+      localStorage.setItem('fileUrl', response.fileUrl);
+      this.matSnackBar.open("Successfully Uploaded", "Ok", { duration: 2000 })
+      // this.displayProfile();
+    }, error => {
+      this.matSnackBar.open("error in uploading", "please upload again", { duration: 2000 })
+    });
   }
   
    public logout() {

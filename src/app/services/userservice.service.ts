@@ -12,6 +12,8 @@ export class UserserviceService {
 
   private httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+    .set('Access-Control-Allow-Origin', '*')
+    .set('Access-Control-Allow-Headers', '*')
   };
   constructor(private http: HttpClient) {
 
@@ -36,8 +38,12 @@ export class UserserviceService {
     return this.http.put<any>(`${environment.apiUrl}${environment.resetPaswordUrl}`, user);
   }
 
-  // verifyEmail(token: string): Observable<any> {
-  //   return this.http.get<any>(`${environment.apiUrl}${environment.usersVerifyUrl}`, { headers: new HttpHeaders().set('token', localStorage.token) })
-  // }
+  //uploadPic
+  public uploadProfilePic(file: File): Observable<any> {
+    const formData: FormData = new FormData();
+    formData.append('file', file);
+    return this.http.post<any>(`${environment.apiUrl}${environment.userProfilePicUploadUrl}`,formData);
+  }
+
 }
 

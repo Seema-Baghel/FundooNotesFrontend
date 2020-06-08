@@ -1,4 +1,4 @@
-<mat-toolbar class="docs-navbar-header">
+<mat-toolbar >
   <mat-toolbar-row>
     <div class="Main">
       <div class="sideNavIcon">
@@ -13,58 +13,104 @@
           <span style="color: rgba(0, 0, 0, 0.342);">undoo</span>
           <span style="color: rgb(255, 174, 0);">N</span>
           <span style="color: rgba(0, 0, 0, 0.342);">otes</span></div>
-      </div>
+      </div> &nbsp;&nbsp;
 
-      <div class="searchWhole">
-        <div class="searchbar">
-          <div class="searchIcon">
-            <button mat-icon-button class="searchButton">
-              <mat-icon>search</mat-icon>
-            </button>
-            <input class="input" matInput type="searchbar" placeholder="Search">
-          </div>
+      <!-- Search bar -->
+    <div class="searchWhole">
+      <div class="searchbar">
+        <div class="searchIcon">
+          <button mat-icon-button class="searchButton">
+            <mat-icon>search</mat-icon>
+          </button>
+          <input class="input" matInput type="searchbar" placeholder="Search...">
         </div>
-
-        <a mat-icon-button [routerLink]="['dashboard']" (click)="refresh()" routerLinkActive="activated"
-          matTooltip="Refresh">
-          <mat-icon>refresh</mat-icon>
-        </a>
-
-        <!-- List & Grid -->
-        <button mat-icon-button fxHide.xs="true" fxShow.sm="false" fxShow.md="true" fxShow.lg="true">
-          <mat-icon >view_stream</mat-icon>
-        </button>
-        <!-- Settings -->
-        <button fxHide.xs="true" mat-icon-button [matMenuTriggerFor]="settings" matTooltip="Settings">
-          <mat-icon>settings</mat-icon>
-        </button>
-        <mat-menu #settings="matMenu">
-          <button mat-menu-item>
-            <span>Settings</span>
-          </button>
-          <button mat-menu-item>
-            <span>Send feedback</span>
-          </button>
-          <button mat-menu-item>
-            <span>Help</span>
-          </button>
-          <button mat-menu-item>
-            <span>App downloads</span>
-          </button>
-          <button mat-menu-item>
-            <span>Keyboad Shortcuts</span>
-          </button>
-        </mat-menu>
-        <!-- notfications -->
-        <button fxHide.xs="true" mat-icon-button [matMenuTriggerFor]="apps" matTooltip="apps">
-          <mat-icon>apps</mat-icon>
-        </button>
-        <mat-menu #apps="matMenu">
-        </mat-menu>
-        <button mat-menu-item (click)="logout()">
-          <mat-icon>logout</mat-icon>Sign out
-        </button>
       </div>
+      <!-- refresh -->
+        <a mat-icon-button [routerLink]="['dashboard']" (click)="refresh()" routerLinkActive="activated"
+            matTooltip="Refresh">
+            <mat-icon>refresh</mat-icon>
+          </a>
+      <!-- List & Grid -->
+      <button mat-icon-button fxHide.xs="true" fxShow.sm="false" fxShow.md="true" fxShow.lg="true">
+        <mat-icon >view_stream</mat-icon>
+      </button>
+      
+      <!-- Settings -->
+      <button fxHide.xs="true" mat-icon-button [matMenuTriggerFor]="settings" matTooltip="Settings">
+        <mat-icon>settings</mat-icon>
+      </button>
+      <mat-menu #settings="matMenu">
+        <button mat-menu-item>
+          <span>Settings</span>
+        </button>
+        <button mat-menu-item>
+          <span>Send feedback</span>
+        </button>
+        <button mat-menu-item>
+          <span>Help</span>
+        </button>
+        <button mat-menu-item>
+          <span>App downloads</span>
+        </button>
+        <button mat-menu-item>
+          <span>Keyboad Shortcuts</span>
+        </button>
+      </mat-menu>
+      <!-- menu-->
+      <button mat-icon-button matTooltip="Apps" fxHide.lt-md="true">
+        <mat-icon>apps</mat-icon>
+    </button>
+
+      <img src="{{profile}}" class="avatar" matTooltip="{{email}}" mat-button [matMenuTriggerFor]="menu">
+   
+      <mat-menu #menu="matMenu">
+          <div fxLayout="column">
+              <div fxLayout="row">
+                  <div class ="image">
+                      <img src="{{profile}}" class="avatar1" matTooltip="Change" mat-button
+                          [matMenuTriggerFor]="menu" />
+                  </div>
+              </div>
+              <form method="POST" enctype="multipart/form-data">
+                  <input matTooltip="Upload Profile Photo" type="file" name="file"
+                      (change)="onSubmit($event.target.files[0])" accept="file/*" value="Upload"
+                      disabledplaceholder="upload">
+              </form>
+
+              <div><br>
+                <mat-card-title class="text_color" >{{firstName}} {{lastName}}</mat-card-title>
+                
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<mat-card-subtitle class="text_email">{{email}}</mat-card-subtitle>
+               </div>
+          </div>
+          <!-- <mat-divider></mat-divider> -->
+          <br>
+          <div>
+            &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+            <button mat-raised-button routerLink='/register' class="button">Add Account</button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button mat-raised-button routerLink="/login" (click)="logout()" class="button">Sign out</button>
+          </div>
+      </mat-menu>
     </div>
+
+    <!-- <mat-menu #account="matMenu"> 
+        <div class="image">
+          <img  class="image" src="assets/image/pexels-photo-326900.jpeg" >
+        </div>
+        <div><br>
+          <mat-card-title class="text_color" >{{firstName}} {{lastName}}</mat-card-title>
+          &nbsp;&nbsp;&nbsp; &nbsp;
+          <mat-card-subtitle class="text_email">{{email}}</mat-card-subtitle>
+         </div>
+       
+        <div ><br>
+          &nbsp; &nbsp;<button mat-raised-button routerLink='/register'>Add Account</button> &nbsp;
+          <button mat-raised-button routerLink="/login" (click)="logout()">Sign out</button>&nbsp; &nbsp;
+        </div>
+    </mat-menu>-->
+ 
+    </div> 
   </mat-toolbar-row>
 </mat-toolbar>
+

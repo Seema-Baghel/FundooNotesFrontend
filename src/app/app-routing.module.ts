@@ -5,6 +5,7 @@ import { LoginComponent } from './components/login/login.component';
 import { ResetpasswordComponent } from './components/resetpassword/resetpassword.component';
 import { ForgotpasswordComponent } from './components/forgotpassword/forgotpassword.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { AuthenticationService } from './services/authentication.service';
 
 const routes: Routes = [
   { path: "login", component: LoginComponent },
@@ -12,7 +13,7 @@ const routes: Routes = [
   { path: "register", component: RegistrationComponent },
   { path: "forgotpassword", component: ForgotpasswordComponent },
   { path: "resetpassword/:token", component: ResetpasswordComponent },
-  { path: "dashboard", component: DashboardComponent}
+  { canActivate : [ AuthenticationService], path: "dashboard", component: DashboardComponent}
   
 ];
 
