@@ -62,7 +62,7 @@
     </button>
 
       <img src="{{profile}}" class="avatar" matTooltip="{{email}}" mat-button [matMenuTriggerFor]="menu">
-   
+       
       <mat-menu #menu="matMenu">
           <div fxLayout="column">
               <div fxLayout="row">
@@ -92,24 +92,7 @@
             <button mat-raised-button routerLink="/login" (click)="logout()" class="button">Sign out</button>
           </div>
       </mat-menu>
-    </div>
-
-    <!-- <mat-menu #account="matMenu"> 
-        <div class="image">
-          <img  class="image" src="assets/image/pexels-photo-326900.jpeg" >
-        </div>
-        <div><br>
-          <mat-card-title class="text_color" >{{firstName}} {{lastName}}</mat-card-title>
-          &nbsp;&nbsp;&nbsp; &nbsp;
-          <mat-card-subtitle class="text_email">{{email}}</mat-card-subtitle>
-         </div>
-       
-        <div ><br>
-          &nbsp; &nbsp;<button mat-raised-button routerLink='/register'>Add Account</button> &nbsp;
-          <button mat-raised-button routerLink="/login" (click)="logout()">Sign out</button>&nbsp; &nbsp;
-        </div>
-    </mat-menu>-->
- 
+    </div> 
     </div> 
   </mat-toolbar-row>
 </mat-toolbar>

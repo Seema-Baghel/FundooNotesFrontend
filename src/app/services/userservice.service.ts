@@ -34,8 +34,8 @@ export class UserserviceService {
     return this.http.post<any>(`${environment.apiUrl}${environment.forgotpasswordUrl}`, user, this.httpOptions);
   }
 
-  resetPassword(user: any): Observable<any> {
-    return this.http.put<any>(`${environment.apiUrl}${environment.resetPaswordUrl}`, user);
+  resetPassword(user: any, token : string): Observable<any> {
+    return this.http.put<any>(`${environment.apiUrl}${environment.resetPaswordUrl + token}`, user);
   }
 
   //uploadPic

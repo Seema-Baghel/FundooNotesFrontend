@@ -14,7 +14,6 @@ const routes: Routes = [
   { path: "forgotpassword", component: ForgotpasswordComponent },
   { path: "resetpassword/:token", component: ResetpasswordComponent },
   { canActivate : [ AuthenticationService], path: "dashboard", component: DashboardComponent}
-  
 ];
 
 @NgModule({

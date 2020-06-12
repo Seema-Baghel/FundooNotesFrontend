@@ -4,14 +4,13 @@
 
 export const environment = {
   production: true,
-  apiUrl: 'http://localhost:8080/',
-  registerUrl: 'user/register/',
-  loginUrl: 'user/login/',
-  forgotpasswordUrl: 'user/forgotpassword/',
-  resetPaswordUrl: 'user/resetpassword/{token}/',
-  usersVerifyUrl: 'user/verify/',
-  userProfilePicUploadUrl: 'user/uploadFile',
-  userProfilePicUrl: 'user/getProfilePic',
+  apiUrl: 'http://localhost:8080/user/',
+  registerUrl: 'register/',
+  loginUrl: 'login/',
+  forgotpasswordUrl: 'forgotpassword/',
+  resetPaswordUrl: 'resetpassword/',
+  usersVerifyUrl: 'verify/',
+  userProfilePicUploadUrl: 'uploadFile',
   getUsersUrl: 'user/getusers'
 };
 

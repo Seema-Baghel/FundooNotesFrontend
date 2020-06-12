@@ -16,7 +16,6 @@ export class ForgotpasswordComponent implements OnInit {
   loading = false;
   submitted = false;
 
-
   constructor(private formBuilder: FormBuilder, private route: ActivatedRoute,
     private router: Router, private userService: UserserviceService,
     private httpUtil: HttpserviceService, private snackBar: MatSnackBar) { }
@@ -38,6 +37,7 @@ export class ForgotpasswordComponent implements OnInit {
     console.log(user);
     this.userService.forgotPassword(user).subscribe(response => {
       console.log("reset password mail sent to your email");
+      //localStorage.setItem('token', response.token);
       this.snackBar.open("open your email to reset password", "Ok", { duration: 2000 })
     }, error => {
       this.snackBar.open("error", "please enter the registered email", { duration: 2000 })

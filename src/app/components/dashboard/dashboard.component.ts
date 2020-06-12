@@ -63,12 +63,6 @@
     window.location.reload();
   }
 
-  // displayProfile() {
-    // this.userService.getprofile(localStorage.getItem('token')).subscribe(details => {
-    //   this.profile = details
-    
-  //}
-
   onSubmit(file: File) {
     console.log(file);
     
@@ -76,13 +70,13 @@
       console.log("login true");
       localStorage.setItem('fileUrl', response.fileUrl);
       this.matSnackBar.open("Successfully Uploaded", "Ok", { duration: 2000 })
-      // this.displayProfile();
+      window.location.reload();
     }, error => {
       this.matSnackBar.open("error in uploading", "please upload again", { duration: 2000 })
     });
   }
   
-   public logout() {
+  public logout() {
      localStorage.removeItem('token')
      this.matSnackBar.open('Logout successfull', 'ok', { duration: 3000 });
      this.router.navigate(['/login']);
